@@ -22,4 +22,13 @@ class CarTest extends TestCase
 
         $this->assertTrue(true);
     }
+
+    public function testUpdateCar()
+    {
+        $car = Car::inRandomOrder()->first();
+        $car->year = '2000';
+        $car->save();
+
+        $this->assertContains('2000', $car->year);
+    }
 }

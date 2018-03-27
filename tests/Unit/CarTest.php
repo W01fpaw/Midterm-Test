@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Car;
+use App\CarFactory;
 
 class CarTest extends TestCase
 {
@@ -57,5 +58,5 @@ class CarTest extends TestCase
 
         $this->assertInternalType('int', $year);
     }
-
+    
 }

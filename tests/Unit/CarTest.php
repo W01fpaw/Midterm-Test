@@ -39,4 +39,15 @@ class CarTest extends TestCase
 
         $this->assertTrue(true);
     }
+
+    public function testCountCar()
+    {
+        $this->artisan("migrate:refresh");
+        $this->artisan("db:seed");
+
+        $car = Car::count();
+
+        $this->assertEquals(50, $car);
+    }
+
 }

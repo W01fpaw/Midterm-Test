@@ -41,4 +41,14 @@ class UserTest extends TestCase
         $this->assertTrue(true);
     }
 
+    public function testCount()
+    {
+        $this->artisan("migrate:refresh");
+        $this->artisan("db:seed");
+
+        $user = User::count();
+
+        $this->assertEquals(50, $user);
+    }
+
 }

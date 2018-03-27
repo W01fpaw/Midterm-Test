@@ -31,4 +31,12 @@ class CarTest extends TestCase
 
         $this->assertContains('2000', $car->year);
     }
+
+    public function testDeleteCar()
+    {
+        $car = Car::inRandomOrder()->first();
+        $car->delete();
+
+        $this->assertTrue(true);
+    }
 }

@@ -26,4 +26,11 @@ class FeatureTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function testAboutPage()
+    {
+        $response = $this->get('/about');
+
+        $response->assertStatus(200);
+    }
 }
